@@ -1,0 +1,71 @@
+/*  STATIC */
+* {
+    margin:  0;
+    padding: 0;
+    overflow: auto;
+}
+html, body {
+    height: 100%;
+    width:  100%;
+}
+
+/*  HEADER */
+.site-header { 
+    height: 5%;
+    position: relative;
+    background-color: snow;
+    border-bottom: 0.125em solid grey;
+    width: 100%;
+    padding: 0.42em 0 0.3em 0;
+}
+#h1_left {
+    color: navy;
+    font-size: 0.65em;
+}
+#h1_name {
+    color: rgb(42, 42, 142);
+    font-size: 0.325em;
+}
+a {
+    float: right;
+    color: grey;
+    font-size: 0.325em;
+    text-decoration: none;
+    padding-right: 0.5em;
+    padding-top: 1.9em;
+}
+
+/* MAIN BODY */
+main {
+    height: 80%;
+    position: relative;
+    background-color: pink;
+    padding: 0 4em 0 4em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#body-1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: "Courier New";
+}
+
+/* FOOTER */
+.site-footer {
+    height: 15%;
+    position: relative;
+    padding-left: 0.25em;
+    background-color: snow;
+    border-top: 0.125em solid grey;
+}
+#fin {
+    font-family: "Brush Script MT";
+    font-size: 2em;
+}
+
+/* @media(max-width: ???) {
+    main {
+        
+    }
+} */
