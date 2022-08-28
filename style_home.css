@@ -16,7 +16,7 @@ body {
 }
 #arrow1, #arrow2, #arrow3 {
     font-size: 8rem;
-    padding-top: 0;
+    /* padding-top: 0; */
     color: rgb(128, 128, 128);
 }
 #arrow1:hover, #arrow2:hover, #arrow3:hover {
@@ -153,8 +153,50 @@ header {
     display: inline-block;
 }
 /*  */
-#footdiv {
+#div3 {
     background-color: rgba(95, 170, 200, 0.64);
+    padding: 0 10% 0;
+    height: auto;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+#div3 h1 {
+    width: 100%;
+    padding: 3.8rem;
+    letter-spacing: 2.5px;
+    color: salmon;
+    color: rgb(253, 131, 117);
+    text-shadow: 2px 2px 2px rgba(26,25,25,0.5);
+}
+.blocktype1 {
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    width: 100%;
+    color: rgba(0, 0, 128, 0.69);
+    padding-bottom: 60px;
+    /* background-color: snow; */
+}
+#coursedate {
+    color: rgba(255, 250, 250, 0.69);
+    /* padding-left: 2px; */
+}
+.blocktype1 a {
+    font-size: 2rem;
+    color: navy;
+    text-decoration: none;
+}
+.blocktype1 a:hover {
+    text-decoration: underline;
+}
+/*  */
+#footdiv {
+    background-color: rgba(95, 170, 200, 0.61);
     height: auto;
     letter-spacing: 0.5px;
     display: flex;
@@ -173,7 +215,10 @@ header {
 #footdiv i, #footdiv li {
     font-size: 1.125rem;
 }
-/*  */
+/* 
+??? resize the arrows X
+??? resize font after arrows X
+*/
 @media(max-width: 1150px) {
     .skills-wrap {
         font-size: 1rem;
