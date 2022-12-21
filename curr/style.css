@@ -25,7 +25,4 @@ body {
 }
 .nav-right div {
     margin-right: 1rem;
-    border: 1px solid black;
-    padding: 5px 20px 5px 20px;
-    border-radius: 20px;
 }
