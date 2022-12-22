@@ -1,5 +1,6 @@
 import {HomeButton} from './home_buttons.js';
 import {CreateDiv} from './create_div.js';
+import Server from '../server/server.js'
 
 //
 const home_button = React.createElement;
@@ -10,3 +11,5 @@ root.render(home_button(HomeButton));
 const cd = React.createElement;
 const domContainer_cd = document.querySelector('#create-div');
 ReactDOM.createRoot(domContainer_cd).render(cd(CreateDiv));
+//
+const server = new Server();
