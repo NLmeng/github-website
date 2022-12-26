@@ -21,11 +21,11 @@ export class HomeButton extends React.Component {
       borderRadius: '20px',
       transform: this.state.hovered ? 'scale(1.05)' : 'scale(1)',
       transition: 'transform 0.2s ease-in-out',
-      backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white'
+      backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white',
     }
 
     return React.createElement(
-      'button',{ 
+      'button', { 
         onClick:      () => this.setState({ clicked: true }),
         onMouseEnter: () => this.setState({ hovered: true }),
         onMouseLeave: () => this.setState({ hovered: false }),

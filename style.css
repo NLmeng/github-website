@@ -30,19 +30,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.5rem;
 }
-#homepage-wrapper {
+#homepage-wrapper1 {
     background-color: rgba(115,139,230,0.7);
+    width: 80%;
+    margin-top: 2.5rem;
     align-items: center;
     display: inline-flex;
     flex-direction: column;
-    width: 80%;
 }
-#my_name1 {
+#h1 {
     font-size: xx-large;
 }
-#my_ocp1 {
+#sh1 {
     font-size: large;
 }
 #par1 {
@@ -50,6 +50,27 @@ body {
     font-family: "SoDo Sans Thin";
     font-weight: 500;
     font-size: medium;
+}
+#homepage-wrapper2 {
+    background-color: rgba(115,139,230,0.7);
+    width: 80%;
+    height: 25rem;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#h2-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+#h2 {
+    font-size: xx-large;
+    padding-left: 2.5rem;
+}
+.par2 {
+    display: none;
 }
 /* FOOTER */
 #homepage-footer {
