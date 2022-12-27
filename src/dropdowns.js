@@ -1,27 +1,35 @@
 'use strict';
+import Context from "./state.js";
 
-const domContainer_content = document.querySelector('#main-par2');
-const domContainer_cpsc110 = document.querySelector('#par2-cpsc110');
+
+var context = new Context('MAIN');
 
 export class Dropdowns extends React.Component {
+
   state = {
     options: [
-      { value: 'Option 1', label: 'Option 1' },
-      { value: 'Option 2', label: 'Option 2' },
-      { value: 'Option 3', label: 'Option 3' },
+      { value: 'MAIN', label: 'Select' },
+      { value: '110', label: 'CPSC 110' },
+      { value: '121', label: 'CPSC 121' },
+      { value: '210', label: 'CPSC 210' },
+      { value: '213', label: 'CPSC 213' },
+      { value: '310', label: 'CPSC 310' },
+      { value: '320', label: 'CPSC 320' },
+      { value: '330', label: 'CPSC 330' },
     ],
     selectedOption: '',
   };
 
   handleChange = (event) => {
     this.setState({ selectedOption: event.target.value });
-    domContainer_content.innerHTML = domContainer_cpsc110.innerHTML;
+    context.setState(event.target.value);
+    context.display();
   };
 
   render() {
     const dropdownStyles = {
         marginLeft: '2.5rem',
-        marginTop: '2.1rem',
+        marginTop: '2rem',
         border: '1px solid white',
         padding: '2.5px 20px 2.5px 1px',
         borderRadius: '10px',

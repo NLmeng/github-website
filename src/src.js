@@ -1,6 +1,6 @@
 import {HomeButton} from './home_buttons.js';
-import {CreateDiv} from './create_div.js';
-import {Dropdowns} from './dropdowns.js'
+import {CreateDiv}  from './create_div.js';
+import {Dropdowns}  from './dropdowns.js'
 //
 const home_button = React.createElement;
 const domContainer_home_button = document.querySelector('#home_button');
