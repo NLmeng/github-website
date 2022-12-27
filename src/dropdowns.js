@@ -2,7 +2,7 @@
 import Context from "./state.js";
 
 
-var context = new Context('MAIN');
+const context = new Context('MAIN');
 
 export class Dropdowns extends React.Component {
 
