@@ -34,6 +34,7 @@ body {
 #homepage-wrapper1 {
     background-color: rgba(115,139,230,0.7);
     width: 80%;
+    height: 12.5rem;
     margin-top: 2.5rem;
     align-items: center;
     display: inline-flex;
@@ -79,29 +80,40 @@ body {
     display: none;
     margin-left: 2.5rem;
 }
+#homepage-wrapper3 {
+    background-color: rgba(115,139,230,0.7);
+    width: 80%;
+    height: 37.5rem;
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
 /* FOOTER */
 #homepage-footer {
     align-items: center;
     display: inline-flex;
     flex-direction: column;
     width: 100%;
-    padding: 1rem;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     border-top: 1px solid black;
 }
 #inner-footer {
     width: 80%;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
     align-content: space-between;
     flex-wrap: wrap;
     justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
 }
 #footer-block {
-    margin-right: 2.5rem;
+    margin-right: 2rem;
 }
 #footer-header {
     font-weight:normal;
@@ -111,4 +123,20 @@ body {
     font-family: "SoDo Sans Thin";
     font-weight: lighter;
     font-size: smaller;
+}
+/* FOOTER ICONS */
+.fa-linkedin {  
+    background: #007bb5;  
+    color: white;
+}
+.fa-github {  
+    background: #0b0b0c;  
+    color: white;  
+}  
+#footer-icon-type1 {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    margin-right: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
 }
