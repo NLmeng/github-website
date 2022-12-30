@@ -1,6 +1,6 @@
 'use strict';
 
-export class HomeButton extends React.Component {
+export class ProjectButton extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ export class HomeButton extends React.Component {
   }
 
   handleClick = () => {
-    window.location.assign('index.html');
+    window.location.assign('../html/project.html');
   }
 
   render() {
@@ -21,8 +21,8 @@ export class HomeButton extends React.Component {
       borderRadius: '20px',
       transform: this.state.hovered ? 'scale(1.05)' : 'scale(1)',
       transition: 'transform 0.2s ease-in-out',
-      backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white',
-      color: this.state.hovered ? 'white' : 'black',
+      backgroundColor: this.state.hovered ? 'white' : 'rgba(115,139,230,0.7)',
+      color: this.state.hovered ? 'black' : 'white',
     }
 
     return React.createElement(
@@ -31,8 +31,8 @@ export class HomeButton extends React.Component {
         onMouseEnter: () => this.setState({ hovered: true }),
         onMouseLeave: () => this.setState({ hovered: false }),
         style: buttonStyles,
-      },
-      'Home'
+      },   
+      'Project'
     );
   }
 
