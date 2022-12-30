@@ -29,13 +29,15 @@ export class CreateDiv extends React.Component {
       borderRadius: '20px',
       transform: this.state.hovered ? 'scale(1.05)' : 'scale(1)',
       transition: 'transform 0.2s ease-in-out',
-      backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white'
+      backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white',
     }
 
     return (
       React.createElement(
         'div', {
-          // style: divStyles,
+          style: {
+            display: 'none',
+          }
         },
         React.createElement(
           'input', {
