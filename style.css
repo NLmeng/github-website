@@ -1,3 +1,6 @@
+
+    
+
 body {
     margin: 0;
     font-family: "SoDo Sans SemiBold";
@@ -34,23 +37,51 @@ body {
 #homepage-wrapper1 {
     background-color: rgba(115,139,230,0.7);
     width: 80%;
-    height: 12.5rem;
+    height: 25rem;
     margin-top: 2.5rem;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#inner-left {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: repeating-linear-gradient(-60deg, rgba(115,139,230,0.5) 0 20px, rgba(115,139,230,0.25) 0 40px);
+}
+#inner-left img {
+    width: auto;
+    height: 99%;
+    border-radius: 50rem;
+    border: dashed 2.5px rgb(7, 39, 249);
+}
+#inner-right {
     display: inline-flex;
     flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
 }
 #h1 {
-    font-size: xx-large;
+    height: 10%;
+    font-size: 3rem;
 }
 #sh1 {
+    height: 30%;
     font-size: large;
 }
 #par1 {
+    height: 100%;
     text-align: -webkit-center;
     font-family: "SoDo Sans Thin";
     font-weight: 500;
-    font-size: medium;
+    font-size: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    line-height: 250%;
 }
 #homepage-wrapper2 {
     background-color: rgba(115,139,230,0.7);
