@@ -30,3 +30,18 @@ forward.onclick = function () {
 backward.onclick = function () {
     mainScroll.scrollLeft -= 42;
 };
+// image modal
+const modal = document.getElementById("myModal");
+const img1 = document.getElementById("img-type1");
+const modalImg1 = document.getElementById("modal-img-type1");
+const captionText = document.getElementById("modal-caption1");
+img1.onclick = function(){
+  modal.style.display = "block";
+  modalImg1.src = this.src;
+  captionText.innerHTML = document.getElementById("caption1").innerHTML;
+}
+
+const close_icon = document.getElementsByClassName("close")[0];
+close_icon.onclick = function() {
+  modal.style.display = "none";
+}
