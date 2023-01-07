@@ -35,6 +35,7 @@ export class Dropdowns extends React.Component {
         borderRadius: '10px',
         backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'rgba(115,139,230,0.9)',
         color: this.state.hovered? 'black' : 'white',
+        cursor: this.state.hovered? 'pointer' : 'default',
       }
 
     const options = this.state.options.map((option) => {

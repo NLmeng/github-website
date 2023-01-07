@@ -23,6 +23,7 @@ export class HomeButton extends React.Component {
       transition: 'transform 0.2s ease-in-out',
       backgroundColor: this.state.hovered ? 'rgba(115,139,230,0.7)' : 'white',
       color: this.state.hovered ? 'white' : 'black',
+      cursor: this.state.hovered? 'pointer' : 'default',
     }
 
     return React.createElement(

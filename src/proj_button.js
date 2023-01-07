@@ -23,6 +23,7 @@ export class ProjectButton extends React.Component {
       transition: 'transform 0.2s ease-in-out',
       backgroundColor: this.state.hovered ? 'white' : 'rgba(115,139,230,0.7)',
       color: this.state.hovered ? 'black' : 'white',
+      cursor: this.state.hovered? 'pointer' : 'default',
     }
 
     return React.createElement(

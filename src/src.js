@@ -21,3 +21,12 @@ const dd = React.createElement;
 const domContainer_dd = document.querySelector('#dropdown1');
 ReactDOM.createRoot(domContainer_dd).render(dd(Dropdowns));
 // horizontal scroll
+const mainScroll  = document.getElementById('main-scroll');
+const forward     = document.getElementById('forward-slide');
+const backward    = document.getElementById('backward-slide');
+forward.onclick = function () {
+    mainScroll.scrollLeft += 42;
+};
+backward.onclick = function () {
+    mainScroll.scrollLeft -= 42;
+};
