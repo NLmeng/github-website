@@ -29,7 +29,7 @@ export class Dropdowns extends React.Component {
   render() {
     const dropdownStyles = {
         marginLeft: '2.5rem',
-        marginTop: '2rem',
+        marginTop: '2.5rem',
         border: '1px solid white',
         padding: '2.5px 20px 2.5px 1px',
         borderRadius: '10px',

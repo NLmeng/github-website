@@ -29,7 +29,6 @@ body {
 }
 /* MAIN BODY */
 #homepage-main {
-    /* background-color: rgba(115,139,230,0.7); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +38,7 @@ body {
     width: 80%;
     height: 25rem;
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -83,11 +83,74 @@ body {
     margin-right: 1rem;
     line-height: 250%;
 }
+/* horizontal scroll */
+#homepage-wrapper4 {
+    background-color: rgba(255, 255, 240, 0.69);
+    width: 80%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+#h2 {
+    justify-content: center;
+    display: flex;
+}
+.underline {
+    background-repeat: repeat-x;
+  }
+.d-under {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/bacon.svg");
+    background-position: 0 1.06em;
+    background-size: 28px 9px;
+}
+.scrolling-wrapper {
+    border: 0.5rem outset rgba(244, 165, 156, 0.813);
+    border-right: none;
+    border-left: none;
+    background-color: ivory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: row;
+}
+.horizontal-element {
+    width: auto;
+    display: inline-block;
+}
+#work1 img, #cert1 img {
+    width: 30rem;
+    height: 20rem;
+    padding: 2.5px;
+}
+#left-slide {
+    left: 0;
+    position: sticky;
+    position: -webkit-sticky;
+}
+#right-slide {
+    right: 0;
+    position: sticky;
+    position: -webkit-sticky;
+}
+.slide {
+    height: 100%;
+    border: none;
+    opacity: 0.42;  
+    color: red;
+    font-size: large;
+}
+.slide:hover{
+    opacity: 1;
+}
+/*  */
 #homepage-wrapper2 {
     background-color: rgba(115,139,230,0.7);
     width: 80%;
-    height: 25rem;
+    height: 100%;
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -98,14 +161,15 @@ body {
     flex-direction: row;
 }
 #h2 {
-    font-size: xx-large;
+    font-size: 2.3rem;
     padding-left: 2.5rem;
 }
 #main-par2 {
     margin-left: 2.5rem;
     font-family: "SoDo Sans Thin";
     font-weight: 500;
-    font-size: medium;
+    font-size: 1.25rem;
+    line-height: 200%;
 }
 .par2 {
     display: none;
@@ -116,6 +180,7 @@ body {
     width: 80%;
     height: 37.5rem;
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
