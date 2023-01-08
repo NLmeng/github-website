@@ -31,17 +31,25 @@ backward.onclick = function () {
     mainScroll.scrollLeft -= 42;
 };
 // image modal
-const modal = document.getElementById("myModal");
-const img1 = document.getElementById("img-type1");
-const modalImg1 = document.getElementById("modal-img-type1");
-const captionText = document.getElementById("modal-caption1");
-img1.onclick = function(){
-  modal.style.display = "block";
-  modalImg1.src = this.src;
-  captionText.innerHTML = document.getElementById("caption1").innerHTML;
+const modals = document.getElementsByClassName('modal');
+const modals_captions = document.getElementsByClassName('modal-caption');
+const modals_imgs = document.getElementsByClassName('modal-content');
+const imgs = document.getElementsByClassName('h-img');
+for (var i=0; i < imgs.length; i++) {
+    const curr_modal = modals[i];
+    const curr_modal_img = modals_imgs[i];
+    const curr_modal_caption = modals_captions[i];
+    const curr_caption = document.getElementById("caption"+(i+1));
+    imgs[i].onclick = function() {
+        curr_modal.style.display = "block";
+        curr_modal_img.src = this.src;
+        curr_modal_caption.innerHTML = curr_caption.innerHTML;
+    }
 }
-
-const close_icon = document.getElementsByClassName("close")[0];
-close_icon.onclick = function() {
-  modal.style.display = "none";
+const close_icons = document.getElementsByClassName("close");
+for (var i=0; i < close_icons.length; i++) {
+    const curr_modal = modals[i];
+    close_icons[i].onclick = function() {
+        curr_modal.style.display = "none";
+     }
 }
