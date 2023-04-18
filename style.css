@@ -1,6 +1,197 @@
 body {
     margin: 0;
     font-family: "SoDo Sans SemiBold";
+    background-color: #f4f4f4;
+}
+
+.logo {
+    color: #fff;
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 1rem;
+}
+
+.menu a {
+    color: #fff;
+}
+
+/* Blog posts */
+.blogposts {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.posttitle {
+    margin-bottom: 0.5rem;
+}
+
+.postmeta {
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.postexcerpt {
+    margin-bottom: 1rem;
+}
+
+.readmore {
+    background-color: #333;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.top {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    max-height: 50vh;
+}
+.top:hover {
+    transform: scale(1.005);
+}
+
+#topbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+.topcontent {
+    position: absolute;
+    color: navy;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    font-size: 24px;
+}
+#seemoretop {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 24px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bottom {
+    flex: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bottomheader {
+    height: 20%;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.bottombody {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.left {
+    height: 50%;
+    width: 50%;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+}
+
+.right {
+    width: 50%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    max-height: 25vh;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }  
+
+.footericon {
+    padding-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
 }
 
 /* GENERAL CLASSES */
@@ -58,9 +249,10 @@ body {
 
 /* MAIN BODY */
 #homepage-main {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
 #homepage-wrapper1 {
@@ -71,7 +263,7 @@ body {
     margin-bottom: 2.5rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: solid grey 1px;
 }
 
@@ -130,7 +322,8 @@ body {
     border-bottom: solid grey 1px;
 }
 
-#h2 {
+#h2,
+#h3 {
     justify-content: center;
     display: flex;
 }
@@ -368,7 +561,8 @@ body {
     flex-direction: row;
 }
 
-#h2 {
+#h2,
+#h3 {
     font-size: 2.3rem;
     padding-left: 2.5rem;
 }
@@ -486,7 +680,7 @@ body {
         margin-bottom: 2.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         border-bottom: solid grey 1px;
         flex-wrap: wrap;
         align-items: center;
@@ -497,7 +691,8 @@ body {
         font-size: 2rem;
     }
 
-    #h2 {
+    #h2,
+    #h3 {
         padding-left: 0;
         font-size: 2rem;
     }
@@ -527,7 +722,7 @@ body {
         margin-bottom: 2.5rem;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         border-bottom: solid grey 1px;
         flex-wrap: wrap;
         align-items: center;
@@ -546,7 +741,8 @@ body {
         font-size: 0.8rem;
     }
 
-    #h2 {
+    #h2,
+    #h3 {
         padding-left: 0;
         font-size: 1rem;
     }
