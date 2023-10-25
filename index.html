@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VANILLA</title>
-    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/common.css" />
     <!-- Include Prism CSS (for syntax highlighting) -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
-</head>
-<body>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1>tbd</h1>
+      <a href="https://lymengblog.vercel.app/" class="nav-button">Home</a>
+      <button onclick="toggleSection('patterns')" class="nav-button">
+        Patterns
+      </button>
+      <button onclick="toggleSection('ood')" class="nav-button">
+        OOD
+      </button>
     </header>
-    
-    <main> </main>
-    
+
+    <main>
+      <div id="patterns" class="section"></div>
+      <div id="ood" class="section"></div>
+    </main>
+
     <footer>
-        <p>tbd</p>
+      <p>tbd</p>
     </footer>
-    
+
     <script src="javascript/script.js"></script>
     <!-- Include Prism JS (for syntax highlighting) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
-</body>
+  </body>
 </html>
