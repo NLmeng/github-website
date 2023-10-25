@@ -1,1 +1,18 @@
-node_modules
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.sublime*
+.vscode/
+.idea/
+
+# Node modules (if you end up using Node.js tools or packages)
+node_modules/
+
+# Other common ignore items for web projects
+*.log
+*.swp
+*.bak
+*.tmp
+*~
