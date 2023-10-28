@@ -17,6 +17,7 @@
 from datetime import datetime
 from enum import Enum
 
+
 class VehicleSize(Enum):
     SMALL = 1
     MEDIUM = 2
@@ -27,11 +28,13 @@ class PaymentMethod(Enum):
     DEBIT = 2
     CASH = 3
 
+
 class APIHandler:
     @staticmethod
     def fetch(url):
         # Simulated API call
         pass
+
 
 class ParkingLot:
     def __init__(self, name, capacity, api_handler):
@@ -58,10 +61,12 @@ class ParkingLot:
         self.spot_manager.free_spot(ticket.spot)
         self.ticket_manager.close_ticket(ticket)
 
+
 class SpotManager:
     def __init__(self, capacity):
         # assuming even split
-        self.spots = {index: ParkingSpot((index % 3) + 1) for index in range(capacity)}
+        self.spots = {index: ParkingSpot((index % 3) + 1)
+                      for index in range(capacity)}
 
     def find_spot(self, vehicle):
         for spot in self.spots.values():
@@ -71,6 +76,7 @@ class SpotManager:
 
     def free_spot(self, spot):
         spot.remove_vehicle()
+
 
 class TicketManager:
     def __init__(self):
@@ -84,6 +90,7 @@ class TicketManager:
     def close_ticket(self, ticket):
         ticket.paid_at = datetime.now()
 
+
 class ParkingSpot:
     def __init__(self, vehicleSize):
         self.vehicleSize = vehicleSize
@@ -94,12 +101,13 @@ class ParkingSpot:
 
     def can_fit(self, vehicle):
         return self.vehicleSize >= vehicle.size
-    
+
     def park(self, vehicle):
         self.vehicle = vehicle
-    
+
     def remove_vehicle(self):
         self.vehicle = None
+
 
 class Vehicle:
     def __init__(self, license_plate):
@@ -120,19 +128,21 @@ class LargeVehicle(Vehicle):
         super().__init__(license_plate)
         self.size = VehicleSize.LARGE
 
+
 class Ticket:
     def __init__(self, vehicle, spot):
         self.vehicle = vehicle
         self.spot = spot
         self.issued_at = datetime.now()
         self.paid_at = None
-    
+
     def is_paid(self):
         return self.paid_at is not None
-    
+
     def calculate_fee(self):
         # assuming there is an API to calculate fee based on issued_at, vehicle size, etc.
         return api_handler.fetch(f'/api/fee/{self.issued_at}/{self.vehicle.size}')
+
 
 class PaymentProcessor:
     def __init__(self, api_handler):
@@ -145,6 +155,7 @@ class PaymentProcessor:
             ticket.paid_at = datetime.now()
             return True
         return False
+
 
 # Usage
 api_handler = APIHandler()

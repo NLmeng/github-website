@@ -1,16 +1,18 @@
 from abc import abstractmethod
 
+
 class Observer:
     def __init__(self, name):
         self.name = name
         self.subjects = []
-    
+
     def watch(self, subject):
         self.subjects.append(subject)
-    
+
     def notify(self, message):
         for subject in self.subjects:
             subject.update('`' + message + '` from ' + self.name)
+
 
 class Subject:
     @abstractmethod
@@ -20,7 +22,7 @@ class Subject:
 class SubjectA(Subject):
     def __init__(self, name):
         self.name = name
-    
+
     def update(self, message):
         print(self.name + ' received message: ' + message)
 
