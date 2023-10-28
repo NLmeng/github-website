@@ -6,6 +6,14 @@
 # Not handling distribution of spots for different sizes
 # Assuming synchrony
 
+# Considerations:
+# 1. Encapsulation: Using getters and setters for controlling access to attributes.
+# 2. Single Responsibility Principle: Dividing responsibilities among different classes.
+# 3. Open/Closed Principle: Code structure allows for extension without modification.
+# 4. Dependency Inversion Principle: Injecting dependencies instead of hard-coding them.
+# 5. Liskov Substitution Principle: Ensuring subclasses can stand in for their parent class.
+# 6. Composition Over Inheritance: Utilizing composition for modular design.
+
 from datetime import datetime
 from enum import Enum
 
@@ -19,40 +27,62 @@ class PaymentMethod(Enum):
     DEBIT = 2
     CASH = 3
 
+class APIHandler:
+    @staticmethod
+    def fetch(url):
+        # Simulated API call
+        pass
+
 class ParkingLot:
-    def __init__(self, name, capacity):
+    def __init__(self, name, capacity, api_handler):
         self.name = name
-        self.tickets = []
-        self.spots = {}
-        self.capacity = capacity
-        # assuming even split
-        for index in range(capacity):
-            vehicleSize = (index % 3) + 1
-            self.spots[index] = ParkingSpot(vehicleSize)
+        self.spot_manager = SpotManager(capacity)
+        self.ticket_manager = TicketManager()
+        self.api_handler = api_handler
         # assuming there is an API to get more information about this parking lot
-        self.info = fetch('/api/get/${name}')
-    
+        self.info = self.api_handler.fetch(f'/api/get/{name}')
+
+    def park(self, vehicle):
+        spot = self.spot_manager.find_spot(vehicle)
+        if spot is None:
+            raise Exception("No available spot")
+        spot.park(vehicle)
+        ticket = self.ticket_manager.issue_ticket(vehicle, spot)
+        return ticket
+
+    def exit(self, ticket, payment_method):
+        if not ticket.is_paid():
+            payment_processor = PaymentProcessor(self.api_handler)
+            if not payment_processor.process(ticket, payment_method):
+                raise Exception("Payment failed")
+        self.spot_manager.free_spot(ticket.spot)
+        self.ticket_manager.close_ticket(ticket)
+
+class SpotManager:
+    def __init__(self, capacity):
+        # assuming even split
+        self.spots = {index: ParkingSpot((index % 3) + 1) for index in range(capacity)}
+
     def find_spot(self, vehicle):
         for spot in self.spots.values():
             if spot.is_available() and spot.can_fit(vehicle):
                 return spot
         return None
 
-    def park(self, vehicle):
-        spot = self.find_spot(vehicle)
-        if spot is None:
-            return None
-        spot.park(vehicle)
+    def free_spot(self, spot):
+        spot.remove_vehicle()
+
+class TicketManager:
+    def __init__(self):
+        self.tickets = []
+
+    def issue_ticket(self, vehicle, spot):
         ticket = Ticket(vehicle, spot)
         self.tickets.append(ticket)
         return ticket
 
-    def exit(self, ticket, payment_method):
-        if not ticket.is_paid():
-            if not PaymentPanel.process(ticket, payment_method):
-                return False
-        ticket.spot.remove_vehicle()
-        return True
+    def close_ticket(self, ticket):
+        ticket.paid_at = datetime.now()
 
 class ParkingSpot:
     def __init__(self, vehicleSize):
@@ -102,17 +132,20 @@ class Ticket:
     
     def calculate_fee(self):
         # assuming there is an API to calculate fee based on issued_at, vehicle size, etc.
-        return fetch('/api/fee/${self.issued_at}/${self.vehicle.size}')
+        return api_handler.fetch(f'/api/fee/{self.issued_at}/{self.vehicle.size}')
 
-class PaymentPanel:
-    def __init__ (self, location):
-        self.location = location
+class PaymentProcessor:
+    def __init__(self, api_handler):
+        self.api_handler = api_handler
 
     def process(self, ticket, payment_method):
-        # assuming there is an API to process payment
         price = ticket.calculate_fee()
-        payment = fetch('/api/pay/${price}/${payment_method}')
+        payment = self.api_handler.fetch(f'/api/pay/{price}/{payment_method}')
         if payment:
             ticket.paid_at = datetime.now()
             return True
         return False
+
+# Usage
+api_handler = APIHandler()
+parking_lot = ParkingLot("Downtown Lot", 100, api_handler)
