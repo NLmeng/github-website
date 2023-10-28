@@ -2,7 +2,9 @@ const sectionsData = {
   patterns: {
     files: ["behavioral/observer.py"],
     titles: ["Observer Pattern"],
-    descriptions: ["A pattern that utilizes one-to-many relationships..."],
+    descriptions: [
+      "A pattern that utilizes one-to-many relationships. Best to use when we want to make changes to many dependencies when one thing changes.",
+    ],
     outputs: [
       "Steve received message: `Hello there` from Bob \n Tina received message: `Hello there` from Bob",
     ],
@@ -10,7 +12,7 @@ const sectionsData = {
   ood: {
     files: ["ood/parking_lot.py"],
     titles: ["Parking Lot"],
-    descriptions: [""],
+    descriptions: ["A parking lot is an area for parking vehicles. There is a fixed number of parking spots available for different types of vehicles. The parking time is tracked with a ticket issued to the vehicle at the entrances of the parking lot. When exiting, a vehicle can either pay at the automated exit panel or to the parking agent at the exit using a card or cash payment method."],
   },
 };
 
