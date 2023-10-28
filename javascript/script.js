@@ -1,12 +1,67 @@
 const sectionsData = {
   patterns: {
-    files: ["behavioral/observer.py"],
-    titles: ["Observer Pattern"],
+    files: [
+      "behavioral/observer.py",
+      "behavioral/state.py",
+      "behavioral/strategy.py",
+      "behavioral/visitor.py",
+      "creational/factory.py",
+      "creational/singleton.py",
+      "structural/composite.py",
+      "structural/decorator.py",
+      "structural/facade.py",
+    ],
+    titles: [
+      "Observer Pattern",
+      "State Pattern",
+      "Strategy Pattern",
+      "Visitor Pattern",
+      "Factory Pattern",
+      "Singleton Pattern",
+      "Composite Pattern",
+      "Decorator Pattern",
+      "Facade Pattern",
+    ],
     descriptions: [
       "A pattern that utilizes one-to-many relationships. Best to use when we want to make changes to many dependencies when one thing changes.",
+      "A pattern that allows an object to alter its behavior when its internal state changes, providing a way to structure code in a manner that encapsulates variations in behavior for different states. It's beneficial when an object's behavior is contingent on its state, and it must change its behavior at run-time depending on that state.",
+      "A pattern that utilizes a family of algorithms, encapsulates each one of them, and makes them interchangeable. It allows the algorithm to vary independently from the clients that use it. This is beneficial when a client object has to choose among multiple strategies to perform a certain action and can switch strategies dynamically as needed.",
+      "A pattern that lets you add further operations to objects without having to modify them. It's useful when you have a collection of objects with different interfaces, and you want to perform operations on these objects that depend on their concrete classes.",
+      "A pattern that is used when a system should be independent of how its products are created. It centralizes the creation of objects, thus controlling the creation process by keeping object creation in one place. This pattern is beneficial when a system needs to be maintained and when a system has families of objects that need to share a common behavior.",
+      "A pattern that ensures a class has only one instance and provides a global point of access to that instance. It's useful when exactly one object is needed to coordinate actions across the system. It achieves this by having a private constructor and a static method to provide access to the instance.",
+      "A pattern that allows individual objects and composites of that objects to be treated uniformly. This structure enables recursive composition and client code can treat individual objects and compositions uniformly, making it easier to manage and manipulate hierarchies of objects.",
+      "A pattern that provides a way to attach new behaviors to objects by placing these objects inside special wrapper class. This pattern is useful when there is a need to extend capabilities of classes in a scalable and flexible way.",
+      "A pattern that offers a unified and simplified interface to a complex subsystem. It helps to reduce complexity and allows the client to interact with the subsystem in a convenient way.",
     ],
     outputs: [
       "Steve received message: `Hello there` from Bob \nTina received message: `Hello there` from Bob",
+      "Taking a nice photo of the sunrise!\nMOVING FORWARD from Sunrise\nNothing to take a photo of yet\nMOVING FORWARD from Day\nTaking an awesome photo of the sunset!\nMOVING FORWARD from Sunset\nNothing to take a photo of yet\nMOVING FORWARD from Night\nTaking a nice photo of the sunrise!\nMOVING FORWARD from Sunrise\nNothing to take a photo of yet\nMOVING FORWARD from Day\n",
+      "performing algorithm 1\nperforming algorithm 2\n",
+      "Hello \nGoodbye",
+      "buying p-free for salmon weight: 10 \ndone p-free",
+      "creating Singleton \nreturning a previous instance \nreturning a previous instance",
+      `
+      performing at Composite
+      performing at Leaf
+      performing at Composite
+      performing at Leaf
+      performing at Leaf
+      performing at Leaf
+
+      Composite (c2)
+      │
+      ├── Leaf
+      │
+      ├── Composite (c1)
+      │   │
+      │   └── Leaf
+      │
+      ├── Leaf
+      │
+      └── Leaf
+      `,
+      "decorating B \ndecorating A \ndoing A",
+      "Subsystem A, Method A \nSubsystem B, Method B \nSubsystem B, Method B \nSubsystem C, Method C",
     ],
   },
   ood: {
