@@ -6,7 +6,7 @@ const sectionsData = {
       "A pattern that utilizes one-to-many relationships. Best to use when we want to make changes to many dependencies when one thing changes.",
     ],
     outputs: [
-      "Steve received message: `Hello there` from Bob \n Tina received message: `Hello there` from Bob",
+      "Steve received message: `Hello there` from Bob \nTina received message: `Hello there` from Bob",
     ],
   },
   ood: {
@@ -16,7 +16,8 @@ const sectionsData = {
       "A parking lot is an area for parking vehicles. There is a fixed number of parking spots available for different types of vehicles. The parking time is tracked with a ticket issued to the vehicle at the entrances of the parking lot. When exiting, a vehicle can either pay at the automated exit panel or to the parking agent at the exit using a card or cash payment method.",
     ],
     diagrams: [
-      `classDiagram
+      `
+      classDiagram
       class VehicleSize{
           SMALL = 1
           MEDIUM = 2
@@ -160,26 +161,21 @@ async function loadCode(
             <h2> ${titles[index]} </h2>
             <p class="description">${descriptions[index]}</p>
             <pre><code class="language-python" id="code-${index}">${text}</code></pre>
-            ${
-              sectionId === "patterns"
-                ? '<button onclick="executeCode(' +
-                  index +
-                  ')">Run Code</button>'
-                : ""
-            }
         </div>
         <div class="output-section" id="patternOutputs-${index}">
-            <div class="mermaid">
-                ${diagrams ? diagrams[index] : ""}
-            </div>
+            ${
+              sectionId === "patterns"
+                ? `<div> Output: 
+                <pre class='white-text'>${outputs ? outputs[index] : ""}</pre>
+                   </div>`
+                : `<div class="mermaid center">
+                    ${diagrams ? diagrams[index] : ""}
+                  </div>`
+            }
         </div>
     `;
   document.getElementById(sectionId).appendChild(container);
   Prism.highlightAll();
-  if (diagrams) mermaid.init(undefined, document.querySelectorAll(".mermaid"));
-}
-
-function executeCode(index) {
-  const outputDiv = document.getElementById(`patternOutputs-${index}`);
-  outputDiv.innerText = sectionsData.patterns.outputs[0];
+  if (sectionId === "ood" && diagrams)
+    mermaid.init(undefined, document.querySelectorAll(".mermaid"));
 }

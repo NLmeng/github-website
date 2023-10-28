@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VANILLA</title>
     <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/main.css" />
     <!-- Include Prism CSS (for syntax highlighting) -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css"
@@ -17,14 +18,12 @@
       <button onclick="toggleSection('patterns')" class="nav-button">
         Patterns
       </button>
-      <button onclick="toggleSection('ood')" class="nav-button">
-        OOD
-      </button>
+      <button onclick="toggleSection('ood')" class="nav-button">OOD</button>
     </header>
 
     <main>
-      <div id="patterns" class="section"></div>
-      <div id="ood" class="section"></div>
+      <div id="patterns" class="section pr-3 pl-3"></div>
+      <div id="ood" class="section pr-3 pl-3"></div>
     </main>
 
     <footer>
@@ -36,6 +35,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
     <!-- Include Mermaid -->
-    <script type="text/javascript" src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/mermaid/dist/mermaid.min.js"
+    ></script>
   </body>
 </html>
