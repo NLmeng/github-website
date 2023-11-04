@@ -1,0 +1,6 @@
+{
+  "file": "creational/factory.py",
+  "title": "Factory Pattern",
+  "description": "A pattern that is used when a system should be independent of how its products are created. It centralizes the creation of objects, thus controlling the creation process by keeping object creation in one place. This pattern is beneficial when a system needs to be maintained and when a system has families of objects that need to share a common behavior.",
+  "output": "buying p-free for salmon weight: 10 \ndone p-free"
+}

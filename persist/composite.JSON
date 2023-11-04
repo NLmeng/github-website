@@ -1,0 +1,6 @@
+{
+  "file": "structural/composite.py",
+  "title": "Composite Pattern",
+  "description": "A pattern that allows individual objects and composites of that objects to be treated uniformly. This structure enables recursive composition and client code can treat individual objects and compositions uniformly, making it easier to manage and manipulate hierarchies of objects.",
+  "output": "performing at Composite\nperforming at Leaf\nperforming at Composite\nperforming at Leaf\nperforming at Leaf\nperforming at Leaf"
+}

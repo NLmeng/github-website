@@ -1,0 +1,6 @@
+{
+  "file": "structural/decorator.py",
+  "title": "Decorator Pattern",
+  "description": "A pattern that provides a way to attach new behaviors to objects by placing these objects inside special wrapper class. This pattern is useful when there is a need to extend capabilities of classes in a scalable and flexible way.",
+  "output": "decorating B \ndecorating A \ndoing A"
+}

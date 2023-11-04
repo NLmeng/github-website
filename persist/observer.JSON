@@ -1,0 +1,6 @@
+{
+  "file": "behavioral/observer.py",
+  "title": "Observer Pattern",
+  "description": "A pattern that utilizes one-to-many relationships. Best to use when we want to make changes to many dependencies when one thing changes.",
+  "output": "Steve received message: `Hello there` from Bob \nTina received message: `Hello there` from Bob"
+}

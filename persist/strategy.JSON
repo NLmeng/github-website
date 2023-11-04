@@ -1,0 +1,6 @@
+{
+  "file": "behavioral/strategy.py",
+  "title": "Strategy Pattern",
+  "description": "A pattern that utilizes a family of algorithms, encapsulates each one of them, and makes them interchangeable. It allows the algorithm to vary independently from the clients that use it. This is beneficial when a client object has to choose among multiple strategies to perform a certain action and can switch strategies dynamically as needed.",
+  "output": "performing algorithm 1\nperforming algorithm 2\n"
+}
