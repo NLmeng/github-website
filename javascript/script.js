@@ -169,8 +169,26 @@ const sectionsData = {
 };
 
 window.onload = () => {
+  populateTOC();
   loadSection("patterns");
 };
+
+function populateTOC() {
+  const toc = document.getElementById("toc");
+  sectionsData.patterns.titles.forEach((title, index) => {
+    const tocItem = document.createElement("a");
+    tocItem.href = `#pattern-${index}`;
+    tocItem.innerText = title;
+    // tocItem.classList.add("center");
+    tocItem.onclick = (e) => {
+      e.preventDefault();
+      document.getElementById(`pattern-${index}`).scrollIntoView({
+        behavior: "smooth",
+      });
+    };
+    toc.appendChild(tocItem);
+  });
+}
 
 function toggleSection(sectionId) {
   document.querySelectorAll(".section").forEach((section) => {
@@ -210,6 +228,7 @@ async function loadCode(
   const response = await fetch(`python/${filename}`);
   const text = await response.text();
   const container = document.createElement("div");
+  container.id = `pattern-${index}`;
   container.classList.add("container");
   container.innerHTML = `
         <div class="code-section">

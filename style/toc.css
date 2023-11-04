@@ -1,0 +1,22 @@
+.toc {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.toc h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.toc a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
