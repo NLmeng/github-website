@@ -20,3 +20,16 @@
 .toc a:hover {
   text-decoration: underline;
 }
+
+.toc-items {
+  border: 1px solid rgba(0, 0, 0, 0.424);
+  border-radius: 20px;
+  text-decoration: none;
+  color: #5c4e4e;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toc-items:hover {
+  transition: --i 0.4s, scale 0.4s;
+  scale: 1.01;
+}

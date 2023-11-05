@@ -11,8 +11,12 @@ const patterns = [
 ];
 const oods = ["parking_lot"];
 const sectionsData = {
-  patterns: {},
-  oods: {},
+  patterns: {
+    loaded: false,
+  },
+  oods: {
+    loaded: false,
+  },
 };
 
 async function loadJSONData(filedir) {
@@ -29,11 +33,11 @@ window.onload = async () => {
     sectionsData.oods[ood] = await loadJSONData(ood);
   }
 
-  populateTOC(sectionsData, "patterns");
+  populateTOC("patterns", sectionsData);
   loadSection("patterns", sectionsData);
 };
 
-function populateTOC(data, sectionId) {
+function populateTOC(sectionId, data) {
   const toc = document.getElementById("toc");
 
   let child = toc.lastElementChild;
@@ -43,32 +47,41 @@ function populateTOC(data, sectionId) {
   }
 
   Object.values(data[sectionId]).forEach((item, index) => {
-    const tocItem = document.createElement("a");
-    tocItem.href = `#${sectionId}-${index}`;
-    tocItem.innerText = item.title;
-    tocItem.onclick = (e) => {
-      e.preventDefault();
-      document.getElementById(`${sectionId}-${index}`).scrollIntoView({
-        behavior: "smooth",
-      });
-    };
-    toc.appendChild(tocItem);
+    if (index !== 0) {
+      const tocItem = document.createElement("a");
+      tocItem.href = `#${sectionId}-${index}`;
+      tocItem.innerText = item.title;
+      tocItem.classList.add("toc-items");
+      tocItem.classList.add("pl-2");
+      tocItem.onclick = (e) => {
+        e.preventDefault();
+        document.getElementById(`${sectionId}-${index}`).scrollIntoView({
+          behavior: "smooth",
+        });
+      };
+      toc.appendChild(tocItem);
+    }
   });
 }
 
 function loadSection(sectionId, data) {
+  if (data[sectionId].loaded) return;
+
   const sectionData = data[sectionId];
   Object.values(sectionData).forEach((item, index) => {
-    loadCode(
-      item.file,
-      index,
-      sectionId,
-      item.title,
-      item.description,
-      item.output,
-      item.diagram
-    );
+    if (index !== 0) {
+      loadCode(
+        item.file,
+        index,
+        sectionId,
+        item.title,
+        item.description,
+        item.output,
+        item.diagram
+      );
+    }
   });
+  data[sectionId].loaded = true;
 }
 
 async function loadCode(
@@ -109,15 +122,15 @@ async function loadCode(
     mermaid.init(undefined, document.querySelectorAll(".mermaid"));
   }
 }
-
 function toggleSection(sectionId) {
   document.querySelectorAll(".section").forEach((section) => {
-    section.style.display = section.id === sectionId ? "block" : "none";
+    if (section.id === sectionId) {
+      section.classList.add("section-visible");
+    } else {
+      section.classList.remove("section-visible");
+    }
   });
 
-  populateTOC(sectionsData, sectionId);
-
-  if (!sectionsData[sectionId].loaded) {
-    loadSection(sectionId, sectionsData);
-  }
+  populateTOC(sectionId, sectionsData);
+  loadSection(sectionId, sectionsData);
 }
