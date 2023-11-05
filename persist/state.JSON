@@ -1,0 +1,6 @@
+{
+  "file": "behavioral/state.py",
+  "title": "State Pattern",
+  "description": "A pattern that allows an object to alter its behavior when its internal state changes, providing a way to structure code in a manner that encapsulates variations in behavior for different states. It's beneficial when an object's behavior is contingent on its state, and it must change its behavior at run-time depending on that state.",
+  "output": "Taking a nice photo of the sunrise!\nMOVING FORWARD from Sunrise\nNothing to take a photo of yet\nMOVING FORWARD from Day\nTaking an awesome photo of the sunset!\nMOVING FORWARD from Sunset\nNothing to take a photo of yet\nMOVING FORWARD from Night\nTaking a nice photo of the sunrise!\nMOVING FORWARD from Sunrise\nNothing to take a photo of yet\nMOVING FORWARD from Day\n"
+}

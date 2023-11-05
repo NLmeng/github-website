@@ -1,0 +1,6 @@
+{
+  "file": "creational/singleton.py",
+  "title": "Singleton Pattern",
+  "description": "A pattern that ensures a class has only one instance and provides a global point of access to that instance. It's useful when exactly one object is needed to coordinate actions across the system. It achieves this by having a private constructor and a static method to provide access to the instance.",
+  "output": "creating Singleton \nreturning a previous instance \nreturning a previous instance"
+}

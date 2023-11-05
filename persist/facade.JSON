@@ -1,0 +1,6 @@
+{
+  "file": "structural/facade.py",
+  "title": "Facade Pattern",
+  "description": "A pattern that offers a unified and simplified interface to a complex subsystem. It helps to reduce complexity and allows the client to interact with the subsystem in a convenient way.",
+  "output": "Subsystem A, Method A \nSubsystem B, Method B \nSubsystem B, Method B \nSubsystem C, Method C"
+}

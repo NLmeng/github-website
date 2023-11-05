@@ -51,7 +51,7 @@ header {
   margin: 20px;
   background-color: #d1d0d0; /* Pewter */
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .code-section,
@@ -88,7 +88,21 @@ pre {
 }
 
 .section {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out, visibility 0.75s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.section-visible {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
+
+.section[style*="block"] {
+  opacity: 1;
 }
 
 #patterns {
