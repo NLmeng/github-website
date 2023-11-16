@@ -8,21 +8,17 @@ This diagram represents a high-level view of the architecture.
 
 ```mermaid
 graph TD
-    index_html["index.html"] -->|links to| style_css_common["style/common.css"]
-    index_html -->|links to| style_css_main["style/main.css"]
-    index_html -->|links to| style_css_toc["style/toc.css"]
+    index_html["index.html"] -->|uses| style_css_common["style (CSS)"]
 
     index_html -->|depends on| js_data["javascript/data.js"]
     index_html -->|depends on| js_main["javascript/main.js"]
     index_html -->|depends on| js_pagination["javascript/pagination.js"]
-    index_html -->|depends on| js_utils["javascript/utils.js"]
 
     index_html -->|links to| ext_prism["Prism.js (Syntax Highlighting)"]
     index_html -->|links to| ext_mermaid["Mermaid.js (Diagrams)"]
 
     js_data -->|fetch from| json_data["persist/ (JSON Data)"]
     js_main -->|interacts with| js_pagination
-    js_main -->|uses| js_utils
 
     js_main -->|manages| python_scripts["python/ (Python Scripts)"]
     python_scripts -->|subdirectories| py_behavioral["python/behavioral/"]
@@ -40,7 +36,7 @@ graph TD
 
     class index_html html;
     class style_css_common,style_css_main,style_css_toc css;
-    class js_data,js_main,js_pagination,js_utils js;
+    class js_data,js_main,js_pagination js;
     class json_data json;
     class py_behavioral,py_creational,py_oods,py_structural,py_hello_world python;
     class ext_prism,ext_mermaid ext;
