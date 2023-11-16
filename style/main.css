@@ -10,6 +10,9 @@ header,
 footer {
   color: #988686; /* Coffee Pot */
   padding: 0.5em 0;
+  border-top: 1px solid #000000; /* Black */
+  text-align: center;
+  padding-top: 3rem;
 }
 #footer a {
   padding-right: 10px;
@@ -19,10 +22,8 @@ header {
   background-color: #000000;
   border-bottom: 1px solid #000000; /* Black */
 }
-footer {
-  border-top: 1px solid #000000; /* Black */
-  text-align: center;
-  padding-top: 3rem;
+main {
+  position: relative;
 }
 
 header {
@@ -107,4 +108,26 @@ pre {
 
 #patterns {
   display: block;
+}
+
+#pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 1rem;
+}
+
+#pagination-controls button {
+  margin: 10px 0;
+  background-color: #5c4e4e; /* Brown */
+  color: white; /* White */
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100px;
+}
+
+#pagination-controls button:hover {
+  background-color: #5c4e4ec0;
 }
