@@ -25,7 +25,6 @@ graph TD
     python_scripts -->|subdirectories| py_creational["python/creational/"]
     python_scripts -->|subdirectories| py_oods["python/oods/"]
     python_scripts -->|subdirectories| py_structural["python/structural/"]
-    python_scripts --> py_hello_world["python/hello_world.py"]
 
     classDef html fill:#f9f,stroke:#333,stroke-width:4px;
     classDef css fill:#ccf,stroke:#333,stroke-width:4px;
@@ -38,6 +37,6 @@ graph TD
     class style_css_common,style_css_main,style_css_toc css;
     class js_data,js_main,js_pagination js;
     class json_data json;
-    class py_behavioral,py_creational,py_oods,py_structural,py_hello_world python;
+    class py_behavioral,py_creational,py_oods,py_structural python;
     class ext_prism,ext_mermaid ext;
 ```
