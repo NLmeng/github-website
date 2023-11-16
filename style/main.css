@@ -19,6 +19,8 @@ footer {
   padding-bottom: 2rem;
 }
 header {
+  display: flex;
+  justify-content: start;
   background-color: #000000;
   border-bottom: 1px solid #000000; /* Black */
 }
