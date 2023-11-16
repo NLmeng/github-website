@@ -31,6 +31,12 @@
 
       <div id="patterns" class="section section-visible pr-3 pl-3"></div>
       <div id="oods" class="section pr-3 pl-3"></div>
+      
+      <div id="pagination-controls">
+        <button id="prev-page">Previous</button>
+        <span id="current-page">Page <span id="page-number">1</span> of <span id="total-pages">2</span></span>
+        <button id="next-page">Next</button>
+      </div>
     </main>
 
     <footer id="footer">
@@ -48,7 +54,10 @@
       </a>
     </footer>
 
-    <script src="javascript/script.js"></script>
+    <script src="javascript/data.js"></script>
+    <script src="javascript/pagination.js"></script>
+    <script src="javascript/main.js"></script>
+
     <!-- Include Prism JS (for syntax highlighting) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
