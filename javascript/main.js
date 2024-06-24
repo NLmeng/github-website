@@ -94,7 +94,7 @@ async function loadCode(
           <div class="code-section">
               <h2> ${title} </h2>
               <p class="description">${description}</p>
-              <pre><code class="language-python" id="code-${index}">${text}</code></pre>
+              <pre class="break-spaces"><code class="language-python" id="code-${index}">${text}</code></pre>
           </div>
           <div class="output-section" id="patternOutputs-${index}">
               ${

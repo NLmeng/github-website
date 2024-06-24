@@ -31,3 +31,29 @@
 .smooth-scroll {
   scroll-behavior: smooth;
 }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+pre code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.output-section pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.break-spaces {
+  white-space: break-spaces !important;
+}
+
+pre.break-spaces,
+pre.break-spaces code {
+  white-space: break-spaces !important;
+}
